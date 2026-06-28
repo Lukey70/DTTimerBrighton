@@ -17,3 +17,10 @@ This version uses the uploaded Bloxburg-style timer as the base and rebuilds the
 - `node --check app.js`
 - `node tests.mjs`
 - Generated an alignment preview image using the same 1198 x 478 screenshot coordinate system.
+
+
+## Final style/layout correction
+
+- Restored the original Bloxburg-style visual theme (blue background, blue lane styling, rounded map frame).
+- Kept the screenshot-aligned Brighton layout and slot coordinates.
+- Only the layout was changed; the site style was restored.
