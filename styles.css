@@ -2,8 +2,8 @@
   --bg: #091736;
   --panel: #182a62;
   --panel-dark: #13224f;
-  --lane: #666666;
-  --lane-outline: #222222;
+  --lane: #626262;
+  --lane-outline: #333333;
   --text: #f7fbff;
   --muted: #b4c2df;
   --green: #58df42;
@@ -96,24 +96,23 @@ th { color: var(--muted); font-weight: 700; }
 .empty { text-align: center; color: var(--muted); }
 .map-panel { border-radius: 24px; padding: 14px; display: flex; align-items: center; justify-content: center; }
 .map-frame {
-  position: relative; width: 100%; max-width: 1196px; aspect-ratio: 1196 / 478; min-height: 0;
-  border-radius: 24px; overflow: hidden; background: #00ff00;
+  position: relative; width: 100%; max-width: 1198px; aspect-ratio: 1198 / 478; min-height: 0;
+  border-radius: 0; overflow: hidden; background: #00ff00;
 }
 .lane-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
-.lane-svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.lane-outline path { stroke: var(--lane-outline); stroke-width: 78; }
-.lane-road path { stroke: var(--lane); stroke-width: 62; }
+.lane-svg path { stroke-linecap: butt; stroke-linejoin: miter; }
+.lane-road-shape path { fill: var(--lane); stroke: none; }
 .label { position: absolute; z-index: 2; text-shadow: 0 2px 0 rgba(0,0,0,0.38); pointer-events: none; }
 .label strong { display: inline-flex; align-items: center; gap: 6px; font-size: 1.1rem; }
 .label span { display: block; color: var(--orange); font-size: 0.95rem; font-weight: 900; }
 
-.present-label { left: 14.4%; top: 0.0%; transform: translate(-50%, 0); text-align: center; color: #000; text-shadow: none; }
-.cash-label { left: 43.6%; top: 0.0%; transform: translate(-50%, 0); text-align: center; color: #000; text-shadow: none; }
-.order1-label { left: 87.5%; top: 85.0%; transform: translate(-50%, 0); text-align: center; color: #000; text-shadow: none; }
-.order2-label { left: 87.0%; top: 36.0%; transform: translate(-50%, 0); text-align: center; max-width: 15%; white-space: normal; color: #000; text-shadow: none; }
+.present-label { left: 15.2%; top: 0.0%; transform: translate(-50%, 0); text-align: center; }
+.cash-label { left: 43.4%; top: 0.0%; transform: translate(-50%, 0); text-align: center; }
+.order1-label { left: 87.3%; top: 86.0%; transform: translate(-50%, -100%); text-align: center; }
+.order2-label { left: 87.2%; top: 36.0%; transform: translate(-50%, 0); text-align: center; max-width: 15%; white-space: normal; }
 .cars-layer { position: absolute; inset: 0; z-index: 3; }
 .car {
-  position: absolute; width: 13.4%; max-width: 170px; min-width: 78px; aspect-ratio: 102 / 44;
+  position: absolute; width: 12.5%; max-width: 150px; min-width: 80px; aspect-ratio: 102 / 44;
   transition: left 0.85s linear, top 0.85s linear, transform 0.85s linear; pointer-events: none;
 }
 .car img { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.28)); }
@@ -166,7 +165,7 @@ body.fullscreen-mode .map-panel { height: 100%; padding: 8px; }
 body.fullscreen-mode .map-frame { width: 100%; height: auto; max-width: none; }
 body.fullscreen-mode .present-label { top: 0.0%; }
 body.fullscreen-mode .cash-label { top: 0.0%; }
-body.fullscreen-mode .order1-label { top: 85.0%; }
+body.fullscreen-mode .order1-label { top: 86.0%; }
 body.fullscreen-mode .order2-label { top: 36.0%; }
 body.fullscreen-mode .lane-summary { left: 2.8%; right: auto; bottom: 5%; }
 body.fullscreen-mode .exit-fullscreen { display: inline-flex; align-items: center; }

@@ -1,9 +1,5 @@
-JavaScript syntax check for simulation.mjs: PASS
 JavaScript syntax check for app.js: PASS
 Simulation logic tests in tests.mjs: PASS
-10 total logical car spaces: PASS
-Visual map updated to screenshot-like grey path: PASS
-Lane 1 lower-right diagonal merge: PASS
-Lane 2/shared top road: PASS
-Cash/Present top shared section retained: PASS
-Embedded assets retained: PASS
+10-space Brighton capacity logic: PASS
+Grey road path rebuilt using uploaded screenshot coordinate system: PASS
+Car position coordinates aligned to screenshot slots: PASS

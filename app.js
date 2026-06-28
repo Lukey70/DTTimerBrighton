@@ -245,23 +245,20 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 
 
-const MAP_SIZE = { width: 1196, height: 478 };
+const MAP_SIZE = { width: 1198, height: 478 };
 const POSITION_UI = {
-  // Shared top path, moving right-to-left across the grey road in the screenshot.
-  present: { x: 172, y: 131, rotation: 180 },
-  gap_present1: { x: 348, y: 131, rotation: 180 },
-  cash: { x: 522, y: 131, rotation: 180 },
-  gap_cash_entry: { x: 697, y: 131, rotation: 180 },
-
-  // Lane 2: one hidden/entry space before Order 2, Order 2, then one forward space before the merge.
-  lane2_merge: { x: 872, y: 131, rotation: 180 },
-  order2: { x: 1048, y: 131, rotation: 180 },
-  lane2_pre1: { x: 1168, y: 131, rotation: 180 },
-
-  // Lane 1: one hidden/entry space before Order 1, Order 1, then the diagonal merge space.
-  lane1_post: { x: 845, y: 280, rotation: -130 },
-  order1: { x: 1048, y: 342, rotation: 180 },
-  lane1_pre1: { x: 1168, y: 342, rotation: 180 },
+  // Coordinates are aligned to the uploaded Brighton screenshot (1198 x 478).
+  // Flow is from the right/order side toward Cash and Present on the left.
+  present: { x: 172, y: 130, rotation: 180 },
+  gap_present1: { x: 350, y: 130, rotation: 180 },
+  cash: { x: 522, y: 130, rotation: 180 },
+  gap_cash_entry: { x: 698, y: 130, rotation: 180 },
+  lane2_merge: { x: 873, y: 130, rotation: 180 },
+  order2: { x: 1047, y: 130, rotation: 180 },
+  lane2_pre1: { x: 1185, y: 130, rotation: 180 },
+  lane1_post: { x: 844, y: 280, rotation: -130 },
+  order1: { x: 1047, y: 342, rotation: 180 },
+  lane1_pre1: { x: 1185, y: 342, rotation: 180 },
 };
 
 const simulator = new DriveThruSimulator(loadState());

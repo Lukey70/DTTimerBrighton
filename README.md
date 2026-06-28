@@ -1,33 +1,19 @@
 # Brighton Drive Thru Timer Website
 
-This is the Brighton version of the drive-thru timer website, based on the uploaded Bloxburg/Crystal Bay style app.
+This version uses the uploaded Bloxburg-style timer as the base and rebuilds the Brighton visual map from the screenshot dimensions.
 
-## What changed
+## Brighton layout
 
-- The visual drive-thru map now follows the grey path shown in the screenshot.
-- The top road is the Lane 2 / shared road.
-- Lane 1 starts lower-right and merges diagonally into Lane 2.
-- The spacing follows the requested 10-car setup:
-  - Lane 1: one pre-order space, Order 1, one diagonal post-order merge space.
-  - Lane 2: one pre-order space, Order 2, one forward post-order space.
-  - Shared section: one before-Cash space, Cash, one space between Cash and Present, Present.
-- Timer logic, controls, sounds, completed-car stats, and fullscreen mode are retained.
+- The map viewBox is set to 1198 x 478 to match the uploaded screenshot.
+- The grey road shape is drawn as the same top road plus lower-right diagonal merge path shown in the screenshot.
+- Top row: Present, one gap, Cash, one before-Cash gap, Lane 2 forward space, Order 2, then a Lane 2 pre-order entry space near the right edge.
+- Lower right: Lane 1 pre-order entry space, Order 1, then a diagonal Lane 1 post-order merge space.
+- Lane 1 and Lane 2 merge into the one before-Cash space.
+- Total active capacity remains 10 car spaces.
+- The existing timer controls, sounds, car count, completed-car table, and fullscreen mode are retained.
 
-## Files
+## Verification
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `simulation.mjs`
-- `tests.mjs`
-- `assets/`
-
-## Keyboard shortcuts
-
-- `1` = Add Car Lane 1
-- `2` = Add Car Lane 2
-- `Q` = Order 1 complete
-- `W` = Order 2 complete
-- `C` = Cash complete
-- `P` = Present complete
-- `F` = Fullscreen
+- `node --check app.js`
+- `node tests.mjs`
+- Generated an alignment preview image using the same 1198 x 478 screenshot coordinate system.
