@@ -21,7 +21,7 @@ function testLane1HasPostOrderSpaceBeforeMerge() {
   assert.ok(car, 'Lane 1 car should move to its own post-order space first');
   assert.equal(car.totalStartedAt, sim.now, 'Total starts when leaving Order 1');
   sim.tick(1);
-  assert.equal(sim.carAt('gap_cash_entry')?.id, car.id, 'Then it moves into the single before-cash space after the merge');
+  assert.equal(sim.carAt('gap_cash_entry')?.id, car.id, 'Then it moves into the single before-cash space after merge');
 }
 
 function testLane2UsesForwardMergeSpace() {

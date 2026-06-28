@@ -1,13 +1,9 @@
 JavaScript syntax check for simulation.mjs: PASS
 JavaScript syntax check for app.js: PASS
 Simulation logic tests in tests.mjs: PASS
-Brighton visual layout updated to follow the grey path from the screenshot: PASS
-Lane 2/shared section across the top: PASS
-Lane 1 lower-right diagonal merge retained: PASS
-10 total car spaces retained: PASS
-Timing targets retained: PASS
+10 total logical car spaces: PASS
+Visual map updated to screenshot-like grey path: PASS
+Lane 1 lower-right diagonal merge: PASS
+Lane 2/shared top road: PASS
+Cash/Present top shared section retained: PASS
 Embedded assets retained: PASS
-
-Verification note:
-- I confirmed the simulator logic, syntax, and file structure.
-- The visual SVG path and car positions were updated to follow the grey route shown in the reference screenshot.

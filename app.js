@@ -245,18 +245,23 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 
 
-const MAP_SIZE = { width: 1062, height: 823 };
+const MAP_SIZE = { width: 1196, height: 478 };
 const POSITION_UI = {
-  present: { x: 155, y: 150, rotation: 180 },
-  gap_present1: { x: 305, y: 150, rotation: 180 },
-  cash: { x: 455, y: 150, rotation: 180 },
-  gap_cash_entry: { x: 605, y: 150, rotation: 180 },
-  lane2_merge: { x: 755, y: 150, rotation: 180 },
-  order2: { x: 905, y: 150, rotation: 180 },
-  lane2_pre1: { x: 1005, y: 150, rotation: 180 },
-  lane1_post: { x: 790, y: 370, rotation: -130 },
-  order1: { x: 910, y: 555, rotation: 180 },
-  lane1_pre1: { x: 1010, y: 555, rotation: 180 },
+  // Shared top path, moving right-to-left across the grey road in the screenshot.
+  present: { x: 172, y: 131, rotation: 180 },
+  gap_present1: { x: 348, y: 131, rotation: 180 },
+  cash: { x: 522, y: 131, rotation: 180 },
+  gap_cash_entry: { x: 697, y: 131, rotation: 180 },
+
+  // Lane 2: one hidden/entry space before Order 2, Order 2, then one forward space before the merge.
+  lane2_merge: { x: 872, y: 131, rotation: 180 },
+  order2: { x: 1048, y: 131, rotation: 180 },
+  lane2_pre1: { x: 1168, y: 131, rotation: 180 },
+
+  // Lane 1: one hidden/entry space before Order 1, Order 1, then the diagonal merge space.
+  lane1_post: { x: 845, y: 280, rotation: -130 },
+  order1: { x: 1048, y: 342, rotation: 180 },
+  lane1_pre1: { x: 1168, y: 342, rotation: 180 },
 };
 
 const simulator = new DriveThruSimulator(loadState());
