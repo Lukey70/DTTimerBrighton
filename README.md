@@ -5,11 +5,13 @@ This is the Brighton static GitHub Pages-ready version of the drive thru timer w
 ## Included in this version
 
 - Same static drive-thru timer app structure as the uploaded Bloxburg/Crystal Bay style file.
-- Brighton store lane layout updated so the drive-thru lane drawing uses straight lines rather than a diagonal merge.
+- Brighton store visual layout now follows the grey path in the reference screenshot.
+- Lane 2 and the shared section run left-right across the top.
+- Lane 1 sits on the lower-right side and merges diagonally up into Lane 2.
 - Total on-map capacity is 10 cars.
-- Lane 1: one pre-order space, Order 1, then one straight post-order space.
-- Lane 2: one pre-order space, Order 2, then one straight post-order space.
-- After the merge: one before-Cash space, Cash, one gap between Cash and Present, then Present, all displayed in the same straight line.
+- Lane 1: one pre-order space, Order 1, then one diagonal post-order merge space.
+- Lane 2: one pre-order space, Order 2, then one forward post-order space on the top lane.
+- After the merge: one before-Cash space, Cash, one gap between Cash and Present, then Present.
 - Cars move one space per second anywhere in the drive thru when the space ahead is clear.
 - Order, Cash and Present only release when their button is pressed.
 - If a station button is pressed while blocked, the car waits there and that section timer keeps counting until the car actually leaves.
@@ -18,7 +20,6 @@ This is the Brighton static GitHub Pages-ready version of the drive thru timer w
 - Present target is 1:00.
 - Total target is 1:30.
 - Every section target is 0:30 except Present.
-- Entry and threshold sounds are retained in `assets/`.
 - Embedded car sprites and audio are retained.
 - Fullscreen mode is retained.
 

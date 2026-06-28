@@ -247,16 +247,16 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const MAP_SIZE = { width: 1062, height: 823 };
 const POSITION_UI = {
-  present: { x: 120, y: 165, rotation: 180 },
-  gap_present1: { x: 215, y: 165, rotation: 180 },
-  cash: { x: 315, y: 165, rotation: 180 },
-  gap_cash_entry: { x: 415, y: 165, rotation: 180 },
-  lane2_merge: { x: 520, y: 165, rotation: 180 },
-  order2: { x: 620, y: 165, rotation: 180 },
-  lane2_pre1: { x: 720, y: 165, rotation: 180 },
-  lane1_post: { x: 820, y: 165, rotation: 180 },
-  order1: { x: 920, y: 165, rotation: 180 },
-  lane1_pre1: { x: 1005, y: 165, rotation: 180 },
+  present: { x: 155, y: 150, rotation: 180 },
+  gap_present1: { x: 305, y: 150, rotation: 180 },
+  cash: { x: 455, y: 150, rotation: 180 },
+  gap_cash_entry: { x: 605, y: 150, rotation: 180 },
+  lane2_merge: { x: 755, y: 150, rotation: 180 },
+  order2: { x: 905, y: 150, rotation: 180 },
+  lane2_pre1: { x: 1005, y: 150, rotation: 180 },
+  lane1_post: { x: 790, y: 370, rotation: -130 },
+  order1: { x: 910, y: 555, rotation: 180 },
+  lane1_pre1: { x: 1010, y: 555, rotation: 180 },
 };
 
 const simulator = new DriveThruSimulator(loadState());
