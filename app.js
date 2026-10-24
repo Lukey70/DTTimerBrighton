@@ -305,8 +305,9 @@ function avgClassForKey(key, seconds) {
     return 'avg-bad';
   }
   if (key === 'present') {
-    if (seconds < 60) return 'avg-good';
-    if (seconds <= 90) return 'avg-mid';
+    // Keep average colours in sync with the configured Present target.
+    if (seconds < TARGETS.present) return 'avg-good';
+    if (seconds <= TARGETS.present * 1.5) return 'avg-mid';
     return 'avg-bad';
   }
   if (key === 'total') {
