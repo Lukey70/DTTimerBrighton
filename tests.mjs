@@ -21,12 +21,12 @@ function testSequentialAdvanceAfterCompletion() { const sim = new DriveThruSimul
 function testCompletedCarsAffectAveragesOnly() { const sim = new DriveThruSimulator(); sim.addCar(1); sim.tick(1); runTicks(sim,3); sim.releaseStation('order1'); runTicks(sim,4); sim.releaseStation('cash'); runTicks(sim,2); sim.releaseStation('present'); sim.tick(1); assert.equal(sim.completedCars.length,1); const completed=sim.completedCars[0]; sim.addCar(1); const s=computeScoreboard(sim.completedCars); assert.equal(s.order1.avg, completed.timings.order1); assert.equal(s.total.avg, completed.timings.total); }
 function testThresholdEvents() { const sim = new DriveThruSimulator(); sim.addCar(1); sim.tick(1); sim.releaseStation('order1'); sim.tick(1); let y=false,r=false; for(let i=0;i<125;i++){ const e=sim.tick(1); if(e.some(x=>x.type==='yellow-threshold')) y=true; if(e.some(x=>x.type==='red-threshold')) r=true; } assert.equal(y,true); assert.equal(r,true); }
 function testReset() { const sim = new DriveThruSimulator(); sim.addCar(1); sim.tick(1); sim.reset(); assert.equal(sim.activeCars.length,0); assert.equal(sim.completedCars.length,0); assert.equal(sim.now,0); }
-// Regression: the browser bundle must colour average times using the new 30-second Present goal.
+// Regression: the browser bundle must colour average times using the 30-second Present goal.
 function testBrowserAverageColours() {
   const appSource = readFileSync(new URL('./app.js', import.meta.url), 'utf8');
-  const match = appSource.match(/function avgClassForKey\\(key, seconds\\) \\{[\\s\\S]*?^\\}/m);
+  const match = appSource.match(/function avgClassForKey\(key, seconds\) \{[\s\S]*?^\}/m);
   assert.ok(match, 'The browser average-colour function must exist');
-  const colour = new Function('TARGETS', match[0] + '\\nreturn avgClassForKey;')(TARGETS);
+  const colour = new Function('TARGETS', match[0] + '\nreturn avgClassForKey;')(TARGETS);
   for (const [seconds, expected] of [
     [0, 'avg-good'], [29, 'avg-good'],
     [30, 'avg-mid'], [37, 'avg-mid'], [45, 'avg-mid'],
@@ -34,7 +34,7 @@ function testBrowserAverageColours() {
   ]) {
     assert.equal(colour('present', seconds), expected, 'Present at ' + seconds + ' seconds');
   }
-  // Other windows and the 90-second overall target retain their existing colours.
+  // Other windows and the overall target retain their existing colours.
   assert.equal(colour('cash', 37), 'avg-mid');
   assert.equal(colour('order1', 46), 'avg-bad');
   assert.equal(colour('total', 95), 'avg-mid');
