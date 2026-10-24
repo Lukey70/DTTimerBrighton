@@ -245,20 +245,20 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 
 
-const MAP_SIZE = { width: 1198, height: 478 };
+const MAP_SIZE = { width: 1400, height: 478 };
 const POSITION_UI = {
-  // Coordinates are aligned to the uploaded Brighton screenshot (1198 x 478).
-  // Flow is from the right/order side toward Cash and Present on the left.
-  present: { x: 172, y: 130, rotation: 180 },
-  gap_present1: { x: 350, y: 130, rotation: 180 },
-  cash: { x: 522, y: 130, rotation: 180 },
-  gap_cash_entry: { x: 698, y: 130, rotation: 180 },
-  lane2_merge: { x: 873, y: 130, rotation: 180 },
-  order2: { x: 1047, y: 130, rotation: 180 },
-  lane2_pre1: { x: 1185, y: 130, rotation: 180 },
-  lane1_post: { x: 844, y: 280, rotation: -130 },
-  order1: { x: 1047, y: 342, rotation: 180 },
-  lane1_pre1: { x: 1185, y: 342, rotation: 180 },
+  // Brighton slots share the Crystal Bay timer logic. Both order lanes have a
+  // complete entry slot beyond the speaker, and cars sit on road centrelines.
+  present: { x: 175, y: 132, rotation: 180 },
+  gap_present1: { x: 350, y: 132, rotation: 180 },
+  cash: { x: 526, y: 132, rotation: 180 },
+  gap_cash_entry: { x: 700, y: 132, rotation: 180 },
+  lane2_merge: { x: 875, y: 132, rotation: 180 },
+  order2: { x: 1048, y: 132, rotation: 180 },
+  lane2_pre1: { x: 1270, y: 132, rotation: 180 },
+  lane1_post: { x: 853, y: 274, rotation: -135 },
+  order1: { x: 1048, y: 343, rotation: 180 },
+  lane1_pre1: { x: 1270, y: 343, rotation: 180 },
 };
 
 const simulator = new DriveThruSimulator(loadState());
