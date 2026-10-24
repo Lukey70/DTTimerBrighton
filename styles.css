@@ -101,18 +101,20 @@ th { color: var(--muted); font-weight: 700; }
 }
 .lane-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
 .lane-svg path { stroke-linecap: round; stroke-linejoin: round; }
-.lane-road-shape path { fill: var(--lane); stroke: var(--lane-outline); stroke-width: 18; }
+.lane-road-shape path { fill: var(--lane); stroke: var(--lane-outline); stroke-width: 12; }
+.station-bays rect { fill: rgba(7,20,45,0.09); stroke: var(--lane-outline); stroke-width: 2; }
+.entry-indicators circle { fill: var(--green); stroke: #17777c; stroke-width: 5; filter: drop-shadow(0 0 7px rgba(88,223,66,0.8)); }
 .label { position: absolute; z-index: 2; text-shadow: 0 2px 0 rgba(0,0,0,0.38); pointer-events: none; }
 .label strong { display: inline-flex; align-items: center; gap: 6px; font-size: 1.1rem; }
 .label span { display: block; color: var(--orange); font-size: 0.95rem; font-weight: 900; }
 
 .present-label { left: 15.2%; top: 1.2%; transform: translate(-50%, 0); text-align: center; }
 .cash-label { left: 43.4%; top: 1.2%; transform: translate(-50%, 0); text-align: center; }
-.order1-label { left: 87.3%; top: 86.0%; transform: translate(-50%, -100%); text-align: center; }
-.order2-label { left: 87.2%; top: 36.0%; transform: translate(-50%, 0); text-align: center; max-width: 15%; white-space: normal; }
+.order1-label { left: 87.3%; top: 89.5%; transform: translate(-50%, 0); text-align: center; }
+.order2-label { left: 87.2%; top: 42.7%; transform: translate(-50%, 0); text-align: center; max-width: 15%; white-space: normal; }
 .cars-layer { position: absolute; inset: 0; z-index: 3; }
 .car {
-  position: absolute; width: 12.5%; max-width: 150px; min-width: 80px; aspect-ratio: 102 / 44;
+  position: absolute; width: 12.5%; max-width: 150px; min-width: 0; aspect-ratio: 102 / 44;
   transition: left 0.85s linear, top 0.85s linear, transform 0.85s linear; pointer-events: none;
 }
 .car img { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.28)); }
@@ -165,8 +167,8 @@ body.fullscreen-mode .map-panel { height: 100%; padding: 8px; }
 body.fullscreen-mode .map-frame { width: 100%; height: auto; max-width: none; }
 body.fullscreen-mode .present-label { top: 1.2%; }
 body.fullscreen-mode .cash-label { top: 1.2%; }
-body.fullscreen-mode .order1-label { top: 86.0%; }
-body.fullscreen-mode .order2-label { top: 36.0%; }
+body.fullscreen-mode .order1-label { top: 89.5%; }
+body.fullscreen-mode .order2-label { top: 42.7%; }
 body.fullscreen-mode .lane-summary { left: 2.8%; right: auto; bottom: 5%; }
 body.fullscreen-mode .exit-fullscreen { display: inline-flex; align-items: center; }
 @media (max-width: 1200px) { .main-grid { grid-template-columns: 1fr; } }
