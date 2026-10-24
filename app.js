@@ -3,7 +3,7 @@ const TARGETS = {
   order1: 30,
   order2: 30,
   cash: 30,
-  present: 60,
+  present: 30,
   total: 90,
 };
 

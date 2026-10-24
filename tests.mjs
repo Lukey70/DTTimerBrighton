@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { DriveThruSimulator, computeScoreboard, TARGETS } from './simulation.mjs';
 function runTicks(sim, seconds) { for (let i = 0; i < seconds; i += 1) sim.tick(1); }
 
-function testTargets() { assert.equal(TARGETS.present, 60); assert.equal(TARGETS.total, 90); }
+function testTargets() { assert.equal(TARGETS.present, 30); assert.equal(TARGETS.total, 90); }
 function testTenCarCapacityPositions() {
   const sim = new DriveThruSimulator();
   const positions = ['lane1_pre1','order1','lane1_post','lane2_pre1','order2','lane2_merge','gap_cash_entry','cash','gap_present1','present'];
